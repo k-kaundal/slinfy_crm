@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "774640621936",
+    "project_id": "slinfy-crm",
+    "storage_bucket": "slinfy-crm.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:774640621936:android:4c860e60c7651f889157b5",
+        "android_client_info": {
+          "package_name": "com.slinfy.slinfy_crm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "774640621936-69gd90bq1dek290eh5t7oc0jt2q9dpv1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCorqimdWiWaPZyvvUJdMvd9hFmDTX6DlA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "774640621936-69gd90bq1dek290eh5t7oc0jt2q9dpv1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
