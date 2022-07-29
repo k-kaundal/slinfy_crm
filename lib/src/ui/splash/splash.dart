@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:slinfy_crm/src/ui/auth/login.dart';
+import 'package:slinfy_crm/src/ui/auth/widgets/login.dart';
 
 class Splash extends StatefulWidget {
   const Splash({Key? key}) : super(key: key);

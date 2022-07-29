@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
-import 'package:slinfy_crm/src/ui/auth/login.dart';
+import 'package:slinfy_crm/src/ui/auth/login_screen.dart';
+import 'package:slinfy_crm/src/ui/auth/widgets/login.dart';
+import 'package:slinfy_crm/src/ui/auth/register.dart';
+import 'package:slinfy_crm/src/ui/dashboard/dashboard.dart';
 import 'package:slinfy_crm/src/ui/home/home.dart';
 import 'package:slinfy_crm/src/ui/splash/splash.dart';
 class MyApp extends StatelessWidget {
@@ -11,7 +14,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       // initialRoute: "/",
       debugShowCheckedModeBanner: false,
-      home: Login(),
+      home: Dashboard(),
     );
   }
 }

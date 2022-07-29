@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:slinfy_crm/src/config/observer/app_bloc_observer.dart';
 import 'package:slinfy_crm/src/my_app.dart';
@@ -10,6 +12,10 @@ void main() async{
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  BlocOverrides.runZoned(() => runApp(const MyApp()),
-      blocObserver: AppBlocObserver());
+  // BlocOverrides.runZoned(() => runApp(MyApp()),
+  //     blocObserver: AppBlocObserver());
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
+      .then((_) {
+    runApp(new MyApp());
+  });
 }
