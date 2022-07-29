@@ -21,6 +21,10 @@ class _DashboardState extends State<Dashboard> {
     NavigationRailDestination(
         icon: Icon(Icons.home, color: Colors.white,), label: Text('Home')),
     NavigationRailDestination(
+        icon: Icon(Icons.home, color: Colors.white,), label: Text('Home')),
+    NavigationRailDestination(
+        icon: Icon(Icons.home, color: Colors.white,), label: Text('Home')),
+    NavigationRailDestination(
         icon: Icon(Icons.home, color: Colors.white,), label: Text('Home'))
   ];
 
@@ -43,7 +47,11 @@ class _DashboardState extends State<Dashboard> {
                   CurvedNavigationRail(
                   backgroundColor: Colors.white,
                   color: Color(0xFFFF9945),
+                  //     color: Colors.lightBlueAccent,
                   width: size.width * 0.12,
+                  animationCurve: Curves.linearToEaseOut,
+                  animationDuration: Duration(seconds: 1),
+                  buttonBackgroundColor: Colors.blueAccent,
                   onDestinationSelected: (index) =>
                       setState(() => _selectedIndex = index),
                 destinations: navRailDest),
@@ -62,6 +70,10 @@ class _DashboardState extends State<Dashboard> {
 class DashboardScreens extends StatelessWidget {
   DashboardScreens({Key? key, required this.value}) : super(key: key);
   List<Widget> widgetList = [
+    Home(),
+    Home(),
+    Home(),
+    Home(),
     Home(),
     LoginScreen(),
   ];

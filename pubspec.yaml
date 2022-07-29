@@ -24,8 +24,17 @@ dependencies:
   firebase_core: ^1.19.1
   firebase_auth: ^3.4.2
   cloud_firestore: ^3.3.0
-  google_nav_bar: ^5.0.6
   curved_navigation_rail: ^2.0.1
+  flutter_custom_clippers: ^2.0.0
+  font_awesome_flutter: ^10.1.0
+  shimmer: ^2.0.0
+  image_picker: ^0.8.5+3
+  permission_handler: ^10.0.0
+  sqflite: ^2.0.3
+  video_player: ^2.4.5
+  lottie: ^1.4.0
+  photo_view: ^0.14.0
+  flutter_rating_bar: ^4.0.1
 
 dev_dependencies:
   flutter_test:
@@ -48,13 +57,19 @@ flutter:
 #    - assets/language/
 
   fonts:
-    - family: Roboto
+    - family: Roboto_Regular
       fonts:
         - asset: assets/font/Roboto-Regular.ttf
           weight: 400
+    - family: Roboto_Medium
+      fonts:
         - asset: assets/font/Roboto-Medium.ttf
           weight: 500
+    - family: Roboto_Bold
+      fonts:
         - asset: assets/font/Roboto-Bold.ttf
           weight: 700
+    - family: Roboto_Black
+      fonts:
         - asset: assets/font/Roboto-Black.ttf
           weight: 900

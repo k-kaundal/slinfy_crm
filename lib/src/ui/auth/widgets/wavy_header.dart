@@ -17,7 +17,6 @@ class WavyHeader extends StatelessWidget {
   }
 }
 
-
 class TopWaveClipper extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
