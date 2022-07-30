@@ -1,10 +1,10 @@
 import 'package:curved_navigation_rail/curved_navigation_rail.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:slinfy_crm/src/ui/auth/login_screen.dart';
-import 'package:slinfy_crm/src/ui/auth/widgets/background.dart';
-import 'package:slinfy_crm/src/ui/auth/widgets/login.dart';
+import 'package:stylish_bottom_bar/stylish_bottom_bar.dart';
 
 import '../home/home.dart';
+import '../profile/profile.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({Key? key}) : super(key: key);
@@ -15,17 +15,53 @@ class Dashboard extends StatefulWidget {
 
 class _DashboardState extends State<Dashboard> {
 
-  int _selectedIndex = 1;
+  // int _selectedIndex = 1;
+  dynamic selected=0;
+  var heart = false;
 
-  List<NavigationRailDestination> navRailDest = [
-    NavigationRailDestination(
-        icon: Icon(Icons.home, color: Colors.white,), label: Text('Home')),
-    NavigationRailDestination(
-        icon: Icon(Icons.home, color: Colors.white,), label: Text('Home')),
-    NavigationRailDestination(
-        icon: Icon(Icons.home, color: Colors.white,), label: Text('Home')),
-    NavigationRailDestination(
-        icon: Icon(Icons.home, color: Colors.white,), label: Text('Home'))
+  List<Widget> widgetList = [
+    Home(),
+    Home(),
+    Home(),
+    Profile(),
+  ];
+
+
+  List<AnimatedBarItems> navItems = [
+    AnimatedBarItems(
+        icon: const Icon(
+          Icons.house_outlined,
+        ),
+        selectedIcon: const Icon(Icons.house_rounded),
+        selectedColor: Colors.deepPurple,
+        backgroundColor: Colors.amber,
+        title: const Text('Home')),
+    AnimatedBarItems(
+        icon: const Icon(Icons.star_border_rounded),
+        selectedIcon: const Icon(Icons.star_rounded),
+        selectedColor: Colors.green,
+        backgroundColor: Colors.amber,
+        title: const Text('Star')),
+    AnimatedBarItems(
+        icon: const Icon(
+          Icons.style_outlined,
+        ),
+        selectedIcon: const Icon(
+          Icons.style,
+        ),
+        backgroundColor: Colors.amber,
+        selectedColor: Colors.deepOrangeAccent,
+        title: const Text('Style')),
+    AnimatedBarItems(
+        icon: const Icon(
+          Icons.person_outline,
+        ),
+        selectedIcon: const Icon(
+          Icons.person,
+        ),
+        backgroundColor: Colors.amber,
+        selectedColor: Colors.pinkAccent,
+        title: const Text('Profile')),
   ];
 
   @override
@@ -35,53 +71,61 @@ class _DashboardState extends State<Dashboard> {
         .size;
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Container(
-        width: size.width,
-        height: size.height,
-        child: Stack(
-          children: [
-            // Background(),
-            Container(
-                child: Row(
-                  children: [
-                  CurvedNavigationRail(
-                  backgroundColor: Colors.white,
-                  color: Color(0xFFFF9945),
-                  //     color: Colors.lightBlueAccent,
-                  width: size.width * 0.12,
-                  animationCurve: Curves.linearToEaseOut,
-                  animationDuration: Duration(seconds: 1),
-                  buttonBackgroundColor: Colors.blueAccent,
-                  onDestinationSelected: (index) =>
-                      setState(() => _selectedIndex = index),
-                destinations: navRailDest),
-                    DashboardScreens(value: _selectedIndex)
-          ],
+      extendBody: true,
+    body: widgetList[selected],
+    //     Stack(
+    //       children: [
+    //         // Background(),
+    //         Container(
+    //             child: Row(
+    //               children: [
+    //               CurvedNavigationRail(
+    //               backgroundColor: Colors.white,
+    //               color: Color(0xFFFF9945),
+    //               //     color: Colors.lightBlueAccent,
+    //               width: size.width * 0.12,
+    //               selectedIndex: 2,
+    //               animationCurve: Curves.linearToEaseOut,
+    //               animationDuration: Duration(seconds: 1),
+    //               buttonBackgroundColor: Colors.blueAccent,
+    //               onDestinationSelected: (index) =>
+    //                   setState(() => _selectedIndex = index),
+    //             destinations: ),
+    //                 DashboardScreens(value: _selectedIndex)
+    //       ],
+    //     ),
+    //   ),
+    //
+    //   ],
+    // ),),
+    bottomNavigationBar: StylishBottomBar(items:navItems,
+      iconSize: 32,
+      barAnimation: BarAnimation.fade,
+      iconStyle: IconStyle.animated,
+      hasNotch: true,
+      fabLocation: StylishBarFabLocation.center,
+      opacity: 0.3,
+      currentIndex: selected ?? 0,
+      onTap: (index) {
+        setState(() {
+          selected = index;
+        });
+      },
+
+    ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          setState(() {
+            heart = !heart;
+          });
+        },
+        backgroundColor: Colors.white,
+        child: Icon(
+          heart ? CupertinoIcons.heart_fill : CupertinoIcons.heart,
+          color: Colors.red,
         ),
       ),
-
-      ],
-    ),)
-    ,
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
-  }
-}
-
-class DashboardScreens extends StatelessWidget {
-  DashboardScreens({Key? key, required this.value}) : super(key: key);
-  List<Widget> widgetList = [
-    Home(),
-    Home(),
-    Home(),
-    Home(),
-    Home(),
-    LoginScreen(),
-  ];
-
-  final int value;
-
-  @override
-  Widget build(BuildContext context) {
-    return Expanded(child: Center(child: widgetList[value]));
   }
 }
