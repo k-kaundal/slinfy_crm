@@ -23,7 +23,7 @@ class _ProfileState extends State<Profile> {
                 height: size.height * 0.05,
               ),
               Container(
-                height: size.height * 0.21,
+                height: size.height * 0.24,
                 width: size.width,
                 child: Column(
                   children: [
@@ -31,7 +31,7 @@ class _ProfileState extends State<Profile> {
                       height: size.height * 0.02,
                     ),
                     CircleAvatar(
-                      maxRadius: 50,
+                      maxRadius: 60,
                       minRadius: 30,
                       child: Image.asset(AppImages.login),
                     ),
@@ -49,7 +49,7 @@ class _ProfileState extends State<Profile> {
                 ),
               ),
               Container(
-                height: size.height * 0.74,
+                height: size.height * 0.71,
                 // color: Colors.black12,
                 width: size.width*0.95,
                 child: ListView(
@@ -282,7 +282,7 @@ class _ProfileState extends State<Profile> {
           Align(
             alignment: Alignment.topCenter,
             child: Container(
-              margin: EdgeInsets.only(top: size.height * 0.23),
+              margin: EdgeInsets.only(top: size.height * 0.26),
               height: size.height * 0.06,
               width: size.width * 0.98,
               decoration: BoxDecoration(
