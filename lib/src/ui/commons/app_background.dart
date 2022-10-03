@@ -8,7 +8,7 @@ class AppBackground extends StatelessWidget {
       backgroundColor: Colors.white,
       body: Column(
         children: <Widget>[
-          new Stack(
+          Stack(
             alignment: Alignment.bottomCenter,
             children: <Widget>[
               // Image.asset('assets/images/collaboration.png', width: MediaQuery.of(context).size.width/1.5,),
@@ -34,14 +34,19 @@ class AppBackground extends StatelessWidget {
 }
 
 const List<Color> orangeGradients = [
-  Color(0xFFFF9844),
-  Color(0xFFFE8853),
-  Color(0xFFFD7267),
+  Color(0x2FF0FCF9),
+  Color(0xFFABD1F5),
+  Color(0xC87294E8),
+  // Color(0xFFABD1F5),
+  // Color(0xFFFE8853),
+  // Color(0xFFFD7267),
+
+
 ];
 
 const List<Color> aquaGradients = [
-  Color(0xFF5AEAF1),
-  Color(0xFF8EF7DA),
+  Color(0xFFE5EFEF),
+  Color(0xFF8EEEF7),
 ];
 
 class WavyHeader extends StatelessWidget {

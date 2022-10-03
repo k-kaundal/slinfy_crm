@@ -4,7 +4,7 @@ class InputWidgetPassword extends StatelessWidget {
   final double bottomRight;
 
   InputWidgetPassword(this.topRight, this.bottomRight);
-
+TextEditingController password = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -23,6 +23,7 @@ class InputWidgetPassword extends StatelessWidget {
                 child: Padding(
                   padding: EdgeInsets.only(left: 40, right: 20, top: 10, bottom: 10),
                   child: TextFormField(
+                    controller: password,
                     obscureText: true,
                     obscuringCharacter: '*',
                     decoration: InputDecoration(

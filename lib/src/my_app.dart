@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
+import 'package:slinfy_crm/src/ui/auth/add_details.dart';
 import 'package:slinfy_crm/src/ui/auth/login_screen.dart';
 import 'package:slinfy_crm/src/ui/auth/widgets/login.dart';
 import 'package:slinfy_crm/src/ui/auth/register.dart';
@@ -13,6 +14,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       // initialRoute: "/",
+      theme: ThemeData.light(
+        useMaterial3: true
+      ),
       debugShowCheckedModeBanner: false,
       home: Dashboard(),
     );

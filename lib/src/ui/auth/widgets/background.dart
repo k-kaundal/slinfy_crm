@@ -34,9 +34,13 @@ class Background extends StatelessWidget {
 }
 
 const List<Color> orangeGradients = [
-  Color(0xFFFF9844),
-  Color(0xFFFE8853),
-  Color(0xFFFD7267),
+  Color(0x2FF0FCF9),
+  Color(0xFFABD1F5),
+  Color(0xC87294E8),
+
+  // Color(0xFFFF9844),
+  // Color(0xFFFE8853),
+  // Color(0xFFFD7267),
 ];
 
 const List<Color> aquaGradients = [
